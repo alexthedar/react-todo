@@ -53,9 +53,10 @@ describe('TodoApp', ()=> {
     todoApp.setState({todos: [todoData]})
 
     todoApp.handleToggle(11)
-    expect(todoApp.state.todos[0].completedAt).toBeA("number")
+    expect(todoApp.state.todos[0].completed).toBe(true)
     todoApp.handleToggle(11)
-    expect(todoApp.state.todos[0].completedAt).toBe(undefined)
+    expect(todoApp.state.todos[0].completed).toBe(false)
+    expect(todoApp.state.todos[0].completedAt).toNotExist()
   })
 
 })
