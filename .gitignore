@@ -32,3 +32,4 @@ Temporary Items
 *.css.map
 
 node_modules/
+playground/
