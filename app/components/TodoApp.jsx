@@ -7,7 +7,6 @@ var TodoApp = React.createClass ({
       <div>
         <div>
           TodoApp
-          {props.children}
         </div>
       </div>
     )
