@@ -46,4 +46,3 @@ Tech used:
 
 TODO:
 Tweak styling for consistency
-Fix test broken when redux installed
