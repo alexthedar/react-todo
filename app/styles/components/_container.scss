@@ -1,0 +1,35 @@
+
+.container{
+  background: $dark-purple;
+  border: 2px solid $purple;
+  border-radius: 5px;
+  padding: 0;
+  margin-bottom: 2rem;
+}
+.container__header {
+  border-bottom: 2px solid $purple;
+  padding: 1rem;
+
+  label {
+    cursor: pointer;
+    font-size: 1rem;
+  }
+
+  > :last-child {
+    align-items: center;
+    display: flex;
+  }
+}
+
+.container__footer {
+  padding: 1rem 1rem 0 1rem ;
+  border-top: 2px solid $purple;
+
+}
+
+.container__message {
+  color: $pastel-green;
+  margin: 2rem auto;
+  text-align: center;
+  font-size: 2rem;
+}
