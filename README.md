@@ -41,6 +41,7 @@ Tech used:
 - Axios
 - Uuid
 - Moment
+- Redux
 
 
 TODO:
