@@ -1,14 +1,16 @@
 var React = require('react')
+var {connect} =require('react-redux')
+var actions = require('actions')
 
-var TodoForm = React.createClass({
+export var TodoForm = React.createClass({
   onSubmit: function(e){
     e.preventDefault()
-
+    var {dispatch} = this.props
     var todoText = this.refs.todoText.value
 
     if (todoText.length > 0){
       this.refs.todoText.value=''
-      this.props.onAddTodo(todoText)
+      dispatch(actions.addTodo(todoText))
     } else {
       this.refs.todoText.focus()
     }
@@ -26,4 +28,4 @@ var TodoForm = React.createClass({
 })
 
 
-module.exports = TodoForm
+export default connect()(TodoForm)
