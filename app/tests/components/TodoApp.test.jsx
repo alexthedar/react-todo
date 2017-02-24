@@ -1,13 +1,13 @@
-var React = require('react')
-var ReactDOM = require('react-dom')
-var expect = require('expect')
-var $ = require('jQuery')
-var TestUtils = require('react-addons-test-utils')
-var {Provider} = require('react-redux')
-var configureStore = require('configureStore')
+var React = require('react');
+var ReactDOM = require('react-dom');
+var {Provider} = require('react-redux');
+var TestUtils = require('react-addons-test-utils');
+var expect = require('expect');
+var $ = require('jQuery');
 
-import TodoList from 'TodoList'
-var TodoApp = require('TodoApp')
+var configureStore = require('configureStore');
+var TodoApp = require('TodoApp');
+import TodoList from 'TodoList';
 
 describe('TodoApp', ()=> {
   it('should exist', () => {
@@ -23,7 +23,7 @@ describe('TodoApp', ()=> {
     )
 
     var todoApp = TestUtils.scryRenderedComponentsWithType(provider, TodoApp)[0]
-    var todoList=TestUtils.scryRenderedComponentsWithType(todoApp, TodoList)
+    var todoList = TestUtils.scryRenderedComponentsWithType(todoApp, TodoList)
 
     expect(todoList.length).toEqual(1)
   })

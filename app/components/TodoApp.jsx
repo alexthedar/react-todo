@@ -4,7 +4,7 @@ var moment = require('moment')
 
 import TodoList from 'TodoList'
 import TodoForm from 'TodoForm'
-var TodoSearch = require('TodoSearch')
+import TodoSearch from 'TodoSearch'
 var TodoAPI = require('TodoAPI')
 
 var TodoApp = React.createClass ({
@@ -12,8 +12,7 @@ var TodoApp = React.createClass ({
     return{
       showCompleted: false,
       searchText: '',
-      todos: TodoAPI.getTodos(),
-      createdAt: ''
+      todos: TodoAPI.getTodos()
     }
   },
   componentDidUpdate: function(){
@@ -44,7 +43,6 @@ var TodoApp = React.createClass ({
     var filteredTodos = TodoAPI.filterTodos(todos, showCompleted, searchText)
 
     return (
-      <div>
         <div>
           <h1 className="page-title">React Todo App</h1>
           <div className="row">
@@ -57,7 +55,6 @@ var TodoApp = React.createClass ({
             </div>
           </div>
         </div>
-      </div>
     )
   }
 })

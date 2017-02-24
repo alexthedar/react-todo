@@ -8,7 +8,6 @@ export var Todo = React.createClass ({
   render: function(){
     var {text, id, completed, createdAt, completedAt, dispatch} = this.props
     var todoClassName = completed ? 'todo todo-completed' : 'todo'
-
     var renderDate = () => {
       var message = 'Created on'
       var timestamp = createdAt

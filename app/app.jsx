@@ -12,9 +12,9 @@ store.subscribe(() => {
   console.log('New State', store.getState())
 })
 
-store.dispatch(actions.addTodo('clean'))
-store.dispatch(actions.setSearchText('happy'))
-store.dispatch(actions.toggleShowCompleted())
+// store.dispatch(actions.addTodo('clean'))
+// store.dispatch(actions.setSearchText('happy'))
+// store.dispatch(actions.toggleShowCompleted())
 
 //load foundation
 $(document).foundation()
@@ -24,15 +24,13 @@ require('style!css!sass!applicationStyles')
 
 ReactDOM.render(
   <Provider store={store}>
-    <TodoApp />
+    <Router history={hashHistory}>
+      <Route path="/" component={TodoApp}>
+
+      </Route>
+    </Router>
   </Provider>,
   document.getElementById('app')
 )
 
-
-
-// <Router history={hashHistory}>
-//   <Route path="/" component={TodoApp}>
-//
-//   </Route>
-// </Router>
+// <TodoApp />
