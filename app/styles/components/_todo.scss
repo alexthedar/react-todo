@@ -21,13 +21,19 @@
 
 
 .todo__subtext{
-  color: $mid-grey;
-  font-size: 0.75rem;
+  color: $light-purple-3;
+  // font-size: -10%;
 }
 
-.todo-completed{
-  p, .todo-subtext {
+.todo-completed {
+  color: $grey;
+
+  .todo__subtext{
     color: $grey;
+  }
+
+  .todo-item{
     text-decoration: line-through;
   }
+
 }

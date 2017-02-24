@@ -41,3 +41,7 @@ Tech used:
 - Axios
 - Uuid
 - Moment
+
+
+TODO:
+Tweak styling for consistency

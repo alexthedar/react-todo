@@ -7,7 +7,7 @@ var Todo = React.createClass ({
     var todoClassName = completed ? 'todo todo-completed' : 'todo'
 
     var renderDate = () => {
-      var message = 'Created '
+      var message = 'Created on'
       var timestamp = createdAt
 
       if(completedAt) {
@@ -26,8 +26,8 @@ var Todo = React.createClass ({
           <input type="checkbox" checked={completed} />
         </div>
         <div>
-          <p>{text}</p>
-          <p className="todo__subtext">{renderDate()}</p>
+          <p className="todo-item">{text}</p>
+          <small className="todo__subtext">{renderDate()}</small>
         </div>
       </div>
     )
