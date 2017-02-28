@@ -40,4 +40,22 @@ describe('Actions', () => {
     var res = actions.toggleTodo(action.id)
     expect(res).toEqual(action)
   })
+
+  it('should create add_todos action', () => {
+    var todos = [{
+      id: '111',
+      text: 'anything',
+      completed: false,
+      completedAt: undefined,
+      createdAt: 30000
+    }]
+
+    var action = {
+      type: 'ADD_TODOS',
+      todos
+    }
+
+    var res = actions.addTodos(todos)
+    expect(res).toEqual(action)
+  })
 })
