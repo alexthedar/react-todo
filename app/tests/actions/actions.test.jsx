@@ -106,7 +106,7 @@ describe('Actions', () => {
     it('should toggle todo and dispatch update todo action',(done)=>{
       const store = createMockStore({})
 
-      const action = actions.startToggleTodo(testTodoRef, true)
+      const action = actions.startToggleTodo(testTodoRef.key, true)
 
       store.dispatch(action).then(()=>{
         const mockActions = store.getActions()
