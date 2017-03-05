@@ -28,13 +28,14 @@ module.exports={
       './app/api'
     ],
     alias: {
+      app: 'app',
       Main: 'app/components/Main.jsx',
       applicationStyles: 'app/styles/app.scss',
       actions: 'app/actions/actions.jsx',
       reducers: 'app/reducers/reducers.jsx',
       configureStore: 'app/store/configureStore.jsx'
     },
-    extensions: ['', '.js', '.jsx']  //what are the extensions of the files to go through
+    extensions: ['', '.js', '.jsx'],  //what are the extensions of the files to go through
   },
   module: {
     loaders: [  //needed for babel to convert jsx and other stuff
@@ -43,8 +44,9 @@ module.exports={
         query: {
           presets: ['react','es2015', 'stage-0']  //what languages will be tranlasted
         },
+
         test: /\.jsx?$/,  //regex to say only get files that use jsx at the end and put them through this loader
-        exclude: /(node_modules | bower_components)/  //what folders do i not want the babel to go through
+        exclude: /(node_modules|bower_components)/  //what folders do i not want the babel to go through
       }
     ]
   },
