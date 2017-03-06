@@ -9,7 +9,7 @@
     "start": "npm run build && node server.js"
   },
   "keywords": [
-    "alexthedar"
+    "alexthedar", "react"
   ],
   "author": "alexthedar",
   "license": "ISC",
