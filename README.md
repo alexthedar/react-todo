@@ -4,7 +4,7 @@
 
 [Click Here For Live Site](http://gentle-taiga-85742.herokuapp.com/#/?_k=3bk2i1)
 
-> The obligatory todo app built in React complete with testing.
+> The obligatory todo app built using React & Redux.  Uses Firebase for db.  Has auth through github.  Uses Karma and Mocha for testing.
 
 
 Install and Run:
@@ -42,6 +42,7 @@ Tech used:
 - Uuid
 - Moment
 - Redux
+- firebase
 
 
 TODO:
