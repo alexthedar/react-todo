@@ -89,4 +89,33 @@ describe('Reducers', () => {
     })
 
   })
+
+  describe('authreducers', ()=>{
+    it('should store uid on login', ()=>{
+      const action = {
+        type: 'LOGIN',
+        uid: '123'
+      }
+
+      const res = reducers.authReducer(undefined, df(action))
+
+      expect(res).toEqual({
+        uid: action.uid
+      })
+    })
+
+    it('should wipe auth on logoout', ()=>{
+      const authData = {
+        uid: '123'
+      }
+
+      const action = {
+        type: 'LOGOUT'
+      }
+
+      const res = reducers.authReducer(df(authData), df(action))
+
+      expect(res).toEqual({})
+    })
+  })
 })
