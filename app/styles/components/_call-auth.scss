@@ -1,0 +1,12 @@
+.callout-auth {
+  background-color: $dark-purple;
+  border: 1px solid $purple;
+  padding: 2rem;
+  text-align: center;
+  h3, p {
+    margin-bottom: 2rem;
+  }
+  button {
+    background-color: $blue;
+  }
+}
