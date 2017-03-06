@@ -10,7 +10,7 @@ export var Login = React.createClass({
   render (){
     return (
       <div>
-        <h1 className="page-title">Todo App</h1>
+        <h1 className="page-title">React Todo App</h1>
         <div className="row">
           <div className="columns small-centered small-10 medium-6 large-4">
             <div className="callout callout-auth">
