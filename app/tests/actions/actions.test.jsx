@@ -1,6 +1,7 @@
 import configureMockStore from 'redux-mock-store'
 import thunk from 'redux-thunk'
 var expect = require('expect')
+
 import firebase, {firebaseRef} from 'app/firebase/'
 var actions = require('actions')
 
@@ -91,12 +92,19 @@ describe('Actions', () => {
     var testTodoRef
 
     beforeEach((done)=>{
-      testTodoRef = firebaseRef.child('todos').push()
-      testTodoRef.set({
-        text: 'random words',
-        completed: false,
-        createdAt: 896876
-      }).then(()=> done())
+      var todosRef = firebaseRef.child('todos')
+
+      todosRef.remove().then(()=>{
+          testTodoRef = firebaseRef.child('todos').push()
+
+          return testTodoRef.set({
+            text: 'random words',
+            completed: false,
+            createdAt: 896876
+          })
+        })
+        .then(()=> done())
+        .catch(done)
     })
 
     afterEach((done)=>{
@@ -123,7 +131,24 @@ describe('Actions', () => {
         expect(mockActions[0].updates.completedAt).toExist()
 
         done()
-      }, done())
+      }).catch(done)
+    })
+
+    it('should pop todos and dispatch add todos',(done)=>{
+      const store = createMockStore({})
+
+      const action = actions.startAddTodos()
+      store.dispatch(action).then(() => {
+        const mockActions = store.getActions()
+
+        expect(mockActions[0].type).toEqual('ADD_TODOS')
+
+        expect(mockActions[0].todos.length).toEqual(1)
+
+        expect(mockActions[0].todos[0].text).toEqual('random words')
+
+        done()
+      }).catch(done)
     })
   })
 })
