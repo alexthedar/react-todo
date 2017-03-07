@@ -34,7 +34,7 @@ export var startAddTodos = ()=>{
     var uid = getState().auth.uid
     var todosRef = firebaseRef.child(`users/${uid}/todos`)
 
-    todosRef.once('value').then((snapshot)=>{
+    return todosRef.once('value').then((snapshot)=>{
       var todos = snapshot.val()  || {}
       var parsedTodos = []
 
