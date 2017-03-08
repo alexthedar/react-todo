@@ -2,8 +2,12 @@ var React = require('react')
 var {connect} =require('react-redux')
 var actions = require('actions')
 
-export var TodoForm = React.createClass({
-  handleSubmit: function(e){
+export class TodoForm extends React.Component {
+  constructor(props){
+    super(props)
+    this.handleSubmit = this.handleSubmit.bind(this)
+  }
+  handleSubmit (e){
     e.preventDefault()
     var {dispatch} = this.props
     var todoText = this.refs.todoText.value
@@ -14,8 +18,8 @@ export var TodoForm = React.createClass({
     } else {
       this.refs.todoText.focus()
     }
-  },
-  render: function(){
+  }
+  render(){
     return(
       <div className="container__footer">
         <form onSubmit={this.handleSubmit} >
@@ -25,7 +29,7 @@ export var TodoForm = React.createClass({
       </div>
     )
   }
-})
+}
 
 
 export default connect()(TodoForm)

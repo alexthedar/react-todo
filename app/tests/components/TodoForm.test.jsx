@@ -5,8 +5,7 @@ var expect = require('expect')
 var $ = require('jquery')
 
 import * as actions from 'actions'
-
-var {TodoForm} = require('TodoForm')
+var {TodoForm} =require('TodoForm')
 
 
 describe('TodoForm', ()=> {
